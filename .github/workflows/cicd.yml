@@ -1,6 +1,8 @@
 name: CI/CD Pipeline
+
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches: [ "main" ]
@@ -27,7 +29,7 @@ jobs:
       run: dotnet build ./CICD_Learning_Api/CICD_Learning_Api.csproj --configuration Release --no-restore
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ./CICD_Learning_Api/CICD_Learning_Api.csproj --no-build --verbosity normal
 
     - name: Publish
       run: dotnet publish ./CICD_Learning_Api/CICD_Learning_Api.csproj -c Release -o ./publish

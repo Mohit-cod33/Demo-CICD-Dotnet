@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../DemoApi.Test/DemoApi.Test.csproj" />
+  <Project Path="CICD_Learning_Api.csproj" />
+</Solution>
